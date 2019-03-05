@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  <%= link_to 'Cars', root_path, class:"nav-link" %>
+
+  <ul class="navbar-nav ml-auto">
+    <% if user_signed_in? %>
+      <li class="nav-item">
+
+        <%= link_to destroy_user_session_path, method: :delete, class:"nav-link" do %>
+          <i class="fas fa-sign-out-alt"></i>Logout
+        <%end%>
+
+      </li>
+    <%else%>
+      <li class="nav-item">
+
+        <%= link_to user_session_path, class:"nav-link" do %>
+          <i class="fas fa-sign-out-alt"></i>Login
+        <%end%>
+
+      </li>
+    <%end%>
+  </ul>
+</nav>
